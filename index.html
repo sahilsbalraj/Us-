@@ -1,0 +1,300 @@
+12.31 3:15 PM
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You, Angry Bird ❤️</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: #fde2e8;
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ---------- SPARKLES ---------- */
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sparkleAnim 2s linear infinite;
+}
+
+@keyframes sparkleAnim {
+  0% { transform: translateY(0) scale(1); opacity:0.8; }
+  50% { transform: translateY(-20px) scale(1.5); opacity:1; }
+  100% { transform: translateY(0) scale(1); opacity:0.8; }
+}
+
+/* ---------- PASSWORD SCREEN ---------- */
+#passwordScreen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  animation: fadeIn 1.5s;
+}
+
+input {
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 15px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  background: #b45f7d;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+button:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- LETTER OPENING ---------- */
+#letter {
+  display: none;
+  min-height: 100vh;
+  background: linear-gradient(#fde2e8, #ffffff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  animation: fadeSlide 1.5s ease forwards;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* ---------- STORY SECTIONS ---------- */
+#story {
+  display: none;
+  padding-bottom: 60px;
+}
+
+.section {
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 25px;
+  animation: fadeSlide 1s ease forwards;
+  font-family: "Georgia", serif;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.8;
+  max-width: 720px;
+  margin: auto;
+}
+
+.heart {
+  font-size: 40px;
+  margin-top: 25px;
+}
+
+img {
+  width: 300px;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+@keyframes fadeSlide {
+  from {opacity:0; transform: translateY(30px);}
+  to {opacity:1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SPARKLES ELEMENTS -->
+<script>
+for(let i=0;i<50;i++){
+  const s=document.createElement('div');
+  s.className='sparkle';
+  s.style.left=Math.random()*100+'vw';
+  s.style.top=Math.random()*100+'vh';
+  s.style.animationDuration=(1+Math.random()*2)+'s';
+  document.body.appendChild(s);
+}
+</script>
+
+<!-- BACKGROUND MUSIC -->
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PASSWORD SCREEN -->
+<div id="passwordScreen">
+  <h1>For My Angry Bird ❤️</h1>
+  <p>Enter the secret password to open my heart </p>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkPassword()">Open </button>
+</div>
+
+<!-- LETTER OPENING -->
+<div id="letter">
+  <h1>My Love ❤️✨</h1>
+  <p>This isn’t a website… it’s my heart. Every word is for you  Open carefully, it’s filled with emotions </p>
+  <img src="https://i.ibb.co/0VtFG1T/love-letter.png" alt="Love Letter">
+  <button onclick="openStory()">Open My Story ➡️</button>
+</div>
+
+<!-- STORY SECTIONS -->
+<div id="story">
+
+<div class="section">
+  <h1>Hi Angry Bird ❤️</h1>
+  <img src="https://i.ibb.co/k2Q4kX9/couple1.jpg" alt="Us">
+  <p>If you’re here, it means you chose curiosity… the same curiosity that once led you to *me* 6 years ago 🥰✨</p>
+  <button onclick="nextSection(0)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>Another year begins… and I still choose you   
+  Even on days I’m tired, even on days I’m quiet… My heart always says “you” 🥹✨</p>
+  <img src="https://i.ibb.co/mBSBzRf/love2.jpg" alt="Memories">
+  <button onclick="nextSection(1)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>6 years. Long distance. Endless waiting ❤️  
+  Every missed hug, every delayed call… But love grew stronger every single day ️</p>
+  <img src="https://i.ibb.co/2sYy4vV/love3.jpg" alt="Distance Love">
+  <button onclick="nextSection(2)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>Different cities. Different routines  Yet the same hearts beating for each other 🥰 We turned screens into windows of love ✨</p>
+  <img src="https://i.ibb.co/f0QF0mR/couple2.jpg" alt="Video Calls">
+  <button onclick="nextSection(3)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>We learned patience, trust, and staying ️ We learned to love in silence, To hope always, even in distance ✨</p>
+  <img src="https://i.ibb.co/Vm9t9zF/romantic1.jpg" alt="Patience">
+  <button onclick="nextSection(4)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>Video calls instead of hugs 🤗 Messages instead of kisses  And still… it worked </p>
+  <img src="https://i.ibb.co/TPv7Jk1/romantic2.jpg" alt="Connection">
+  <button onclick="nextSection(5)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>Yet we never stopped choosing each other  Through every challenge, every distance… we chose love ❤️✨</p>
+  <button onclick="nextSection(6)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>You — my Angry Bird  Strong, stubborn, fierce, yet soft  You make my heart feel safe and alive 🥰✨</p>
+  <img src="https://i.ibb.co/YTjNqbc/angry-bird.jpg" alt="Angry Bird">
+  <button onclick="nextSection(7)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>My Skeleton with muscles  Tough outside, soft inside  Loyal, protective, my forever </p>
+  <button onclick="nextSection(8)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>You saw my worst days and stayed 🥹 That’s why you’re my home ✨ You’re my heart, my joy, my everything </p>
+  <img src="https://i.ibb.co/4YJ7Pq6/couple3.jpg" alt="Embrace">
+  <button onclick="nextSection(9)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>We survived silence, misunderstandings, and long nights  And love didn’t fade — it only deepened ✨</p>
+  <button onclick="nextSection(10)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>I don’t dream of perfect days  I dream of ordinary days with you 🥰 Laughing, holding hands, loving endlessly ✨</p>
+  <button onclick="nextSection(11)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>One day there will be no distance ⏳ No screens, no waiting… just us  Forever, my love ✨</p>
+  <button onclick="nextSection(12)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>So here’s my honest question  Will you keep choosing me? Through laughter, tears, chaos, and calm 🥰</p>
+  <button onclick="nextSection(13)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <h1>Will you keep choosing me? ❤️</h1>
+  <p>Through life, distance, and forever ✨ My Angry Bird , my Skeleton with muscles , my everything 🥹</p>
+  <div class="heart">❤️❤️</div>
+  <img src="https://i.ibb.co/zZd8Z8Q/proposal.jpg" alt="Proposal">
+  <button onclick="nextSection(14)">Next ➡️</button>
+</div>
+
+<div class="section">
+  <p>Happy New Year, Angry Bird ❤️ My love. My home. My always  Thank you for 6 magical years 🥰✨</p>
+</div>
+
+</div>
+
+<script>
+function checkPassword() {
+  const correctPassword = "151723";
+  const entered = document.getElementById("password").value;
+  if(entered === correctPassword){
+    document.getElementById("passwordScreen").style.display = "none";
+    document.getElementById("letter").style.display = "flex";
+  } else {
+    alert("Wrong password ❤️ Try again");
+  }
+}
+
+function openStory(){
+  document.getElementById("letter").style.display = "none";
+  document.getElementById("story").style.display = "flex";
+  document.getElementsByClassName("section")[0].style.display = "flex";
+}
+
+function nextSection(index){
+  document.getElementsByClassName("section")[index].style.display = "none";
+  if(document.getElementsByClassName("section")[index+1]){
+    document.getElementsByClassName("section")[index+1].style.display = "flex";
+  }
+}
+</script>
+
+</body>
+</html>
